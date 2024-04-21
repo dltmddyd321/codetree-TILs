@@ -13,7 +13,7 @@ import java.util.regex.Matcher
 import java.util.regex.Pattern
 import kotlin.math.*
 
-fun main45345() {
+fun main() {
     val br = System.`in`.bufferedReader()
     val (n, k) = br.readLine().split(" ").map { it }
     
