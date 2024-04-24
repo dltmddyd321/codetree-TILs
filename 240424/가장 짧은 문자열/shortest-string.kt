@@ -12,17 +12,20 @@ import java.util.regex.Pattern
 import kotlin.math.*
 
 fun main() {
-    val arr = mutableListOf<String>()
     val scanner = Scanner(System.`in`)
+    var min = 0
+    var max = 0
     val first = scanner.nextLine()
-    arr.add(first)
+    min = first.length
+    max = first.length
+
     val second = scanner.nextLine()
-    arr.add(second)
+    if (second.length < min) min = second.length
+    if (second.length > max) max = second.length
+
     val third = scanner.nextLine()
-    arr.add(third)
+    if (third.length < min) min = third.length
+    if (third.length > max) max = third.length
 
-    val short = arr.minOf { it.length }
-    val long = arr.maxOf { it.length }
-
-    print(long - short)
+    print(max - min)
 }
