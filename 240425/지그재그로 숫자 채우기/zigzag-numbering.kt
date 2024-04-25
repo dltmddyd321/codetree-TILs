@@ -12,17 +12,20 @@ import java.util.regex.Pattern
 import kotlin.math.*
 
 fun main() {
-    fun printRectangle(height: Int, width: Int) {
+    fun printRectangle(width: Int, height: Int) {
+        // 각 행에 대해서
         for (i in 0 until height) {
+            var start = i
+            // 각 열에 대해서
             for (j in 0 until width) {
-                val number = if (j == 0 && height > 1) i else 2 * height - 1 - i
-                print("$number ")
+                print("$start ")
+                start += height  // 다음 열의 숫자는 현재 행의 높이만큼 증가
             }
-            println()
+            println() // 각 행이 끝날 때마다 줄바꿈
         }
     }
     val scanner = Scanner(System.`in`)
     val height = scanner.nextInt()
     val width = scanner.nextInt()
-    printRectangle(height, width)
+    printRectangle(width, height)
 }
