@@ -15,7 +15,7 @@ fun main() {
     fun printRectangle(height: Int, width: Int) {
         for (i in 0 until height) {
             for (j in 0 until width) {
-                val number = if (j == 0) i else 2 * height - 1 - i
+                val number = if (j == 0 && height > 1) i else 2 * height - 1 - i
                 print("$number ")
             }
             println()
