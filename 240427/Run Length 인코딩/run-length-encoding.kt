@@ -40,5 +40,7 @@ fun main() {
 
     val scanner = Scanner(System.`in`)
     val input = scanner.nextLine()
-    println(compressString(input))
+    val res = compressString(input)
+    println(res.length)
+    println(res)
 }
