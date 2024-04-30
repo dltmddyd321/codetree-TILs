@@ -33,5 +33,9 @@ fun main() {
     }
     check(first)
     check(second)
-    println(arr[0] + arr[1])
+    if (arr.size > 1) {
+        println(arr[0] + arr[1])
+    } else {
+        println(arr[0])
+    }
 }
