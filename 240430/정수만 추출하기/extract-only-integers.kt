@@ -22,20 +22,23 @@ fun main() {
     var temp = ""
     val (first, second) = scanner.nextLine().split(" ")
     fun check(input: String) {
-        for (i in input) {
-            if (i.isDigit()) temp += i
-            else {
-                arr.add(temp.toInt())
-                temp = ""
-                return
+        val isInput = try {
+            input.toInt()
+            true
+        } catch (e: Exception) { false }
+        if (isInput) arr.add(input.toInt())
+        else {
+            for (i in input) {
+                if (i.isDigit()) temp += i
+                else {
+                    arr.add(temp.toInt())
+                    temp = ""
+                    return
+                }
             }
         }
     }
     check(first)
     check(second)
-    if (arr.size > 1) {
-        println(arr[0] + arr[1])
-    } else {
-        println(arr[0])
-    }
+    println(arr[0] + arr[1])
 }
