@@ -17,7 +17,7 @@ fun main() {
         return
     }
 
-    val maxKey = keysWithValueOne.maxOrNull()
+    val maxKey = keysWithValueOne.maxByOrNull { it }
 
     println(if (keysWithValueOne.count { it == maxKey } == 1) {
         maxKey ?: -1
