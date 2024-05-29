@@ -23,7 +23,10 @@ fun main() {
 
     val scanner = Scanner(System.`in`)
     val n = scanner.nextLine().toInt()
-    val nums = scanner.nextLine().split(" ").map { it.toInt() }
+    val nums = mutableListOf<Int>()
+    repeat(n) {
+        nums.add(scanner.nextInt())
+    }
     val result = findMaxPositions(nums)
     println(result.joinToString(" "))
 }
